@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const request = (path, params) => {
-    path = 'http://localhost:3000' + path;
+    path = 'http://localhost:7777' + path;
     return axios.post(
         path,
         params,

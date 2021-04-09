@@ -3,7 +3,7 @@ const PROJECT_PATH = path.join(__dirname, '../');
 const SOURCE_PATH = path.join(PROJECT_PATH, './src')
 
 module.exports = {
-    devtool : 'inline-source-map',
+    devtool : 'cheap-module-eval-source-map',
     entry: {
         index: './src/index',
         framework: ['react', 'react-dom']

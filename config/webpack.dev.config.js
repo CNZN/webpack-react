@@ -18,7 +18,14 @@ module.exports = () => {
             open: true,
             contentBase: path.join(__dirname, 'dist'),
             compress: true,
-            port: 8888
+            port: 8888,
+            historyApiFallback:true,
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:8888/',
+                    changeOrigin: true
+                }
+            }
         }
     }]);
     return config;

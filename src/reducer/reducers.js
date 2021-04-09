@@ -1,4 +1,6 @@
 import {combineReducers} from 'redux';
+import {connectRouter, routerMiddleware} from 'connected-react-router';
+// import { history } from '.';
 
 function name (state = null, action)  {
 
@@ -11,7 +13,6 @@ function name (state = null, action)  {
 }
 
 function age (state = null, action)  {
-    console.log(action);
     switch (action.type) {
         case 'HOME_AGE':
             return action.payload
@@ -20,7 +21,9 @@ function age (state = null, action)  {
     }
 }
 
-export default combineReducers({
+const reducer = (history) => combineReducers({
     name,
-    age
+    age,
+    router: connectRouter(history)
 })
+export default reducer;
