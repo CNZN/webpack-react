@@ -4,6 +4,7 @@ import Rounter from './router/index';
 import Header from '@/common/components/Header/index';
 import Footer from '@/common/components/Footer/index';
 
+// antd需要单独引入
 import 'antd/dist/antd.css';
 
 

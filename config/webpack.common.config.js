@@ -1,11 +1,12 @@
 const path = require ('path');
 const PROJECT_PATH = path.join(__dirname, '../');
 const SOURCE_PATH = path.join(PROJECT_PATH, './src')
+const HappyPack = require('happypack');
 
 module.exports = {
     devtool : 'cheap-module-eval-source-map',
     entry: {
-        index: './src/index',
+        index: './src/index.js',
         framework: ['react', 'react-dom']
     },
     output: {
@@ -40,6 +41,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader','css-loader']
+                // use: 'happypack/loader?id=styles'
             },
             {
                 test: /\.less$/,
@@ -75,5 +77,11 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    // plugins: [
+    //     new HappyPack({
+    //         id: 'styles',
+    //         loaders: [ 'style-loader', 'css-loader', 'less-loader' ]
+    //     })
+    // ],
 }

@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.config');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const HappyPack = require('happypack');
 
 module.exports = () => {
     const config = merge.merge([common, {
@@ -20,6 +21,7 @@ module.exports = () => {
             compress: true,
             port: 8888,
             historyApiFallback:true,
+            // 本地代理的端口号
             proxy: {
                 '/api': {
                     target: 'http://localhost:8888/',

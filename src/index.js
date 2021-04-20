@@ -15,6 +15,7 @@ const PROJECT_PATH = path.join(__dirname, '../');
 const SOURCE_PATH = path.join(PROJECT_PATH, './src')
 // console.log(SOURCE_PATH)
 
+// 判断环境选着性使用mock数据
 if (process.env.NODE_ENV == "development") {
     // console.log(process.env.NODE_ENV)
     require('./mock');
@@ -23,6 +24,7 @@ if (process.env.NODE_ENV == "development") {
 
 // console.log(window.location.pathname)
 // history.push(window.location.pathname);
+// 错误边界
 class ErrorBoundary extends React.Component {
     constructor(props) {
       super(props);
@@ -51,6 +53,7 @@ class ErrorBoundary extends React.Component {
 
 ReactDom.render(
     <ErrorBoundary>
+      {/* 提供store */}
         <Provider store={store}>
             <ConnectedRouter history={history}>
                 <BrowserRouter>
