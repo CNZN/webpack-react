@@ -11,9 +11,9 @@ import 'antd/dist/antd.css';
 function App () {
     return (
         <div className="App">
-            <Header />
+            <Header value ='kenny'/>
             <Rounter />
-            <Footer />
+            <Footer  value ='shrily'/>
         </div>
     );
 }

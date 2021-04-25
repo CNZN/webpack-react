@@ -6,8 +6,9 @@ import { withRouter } from 'react-router';
 import {getInfo} from './hander';
 
 import store from '@/reducer/index';
+import { connect } from 'react-redux';
 
-export default withRouter( class Header extends React.Component {
+class Header extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -19,6 +20,7 @@ export default withRouter( class Header extends React.Component {
         this.props.history.push(`${e.key}`);
         getInfo();
     };
+
     render() {
         const { current } = this.state;
         return (
@@ -32,7 +34,13 @@ export default withRouter( class Header extends React.Component {
             </Menu>
         );
     }
-})
+}
+
+export default connect(
+    redux => {
+        return redux;
+    }
+)(withRouter(Header));
 
 
 
