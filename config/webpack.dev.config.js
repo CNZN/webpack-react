@@ -14,6 +14,7 @@ module.exports = () => {
                 template: 'public/index.html'
             })
         ],
+        
         devServer: {
             hot: true,
             open: true,
