@@ -27,7 +27,7 @@ const Echarts = ()  => {
     }, [])
     return (
         <div>
-
+            图表练习
         </div>
     ) 
 }

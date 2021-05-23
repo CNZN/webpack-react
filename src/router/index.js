@@ -17,7 +17,7 @@ export default class Router extends React.Component {
                             })
                         }
                         {/* <Route path="*" component={NoMatch}/> */}
-                        <Route render={() => <Redirect to="/" />} />
+                        {/* <Route render={() => <Redirect to="/" />} /> */}
                     </Switch>
                 </BrowserRouter>
             </div>
