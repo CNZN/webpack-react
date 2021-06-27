@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-// import {createBrowserHistory} from 'history';
-import App from './app';
-import store, {history} from '@/reducer/index';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
-
 import {ConnectedRouter} from 'connected-react-router';
+import store, {history} from '@/reducer/index';
+import App from './app';
+// import {createBrowserHistory} from 'history';
+
+
 
 
 const path = require ('path');
