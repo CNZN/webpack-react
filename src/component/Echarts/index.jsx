@@ -1,33 +1,34 @@
-import React, { useEffect } from 'react';
-
-// export default class Echarts extends React.Component{
-//     constructor(props){
-//         super(props);
-//         this.state={
-
-//         };
-//     };
-
-//     render () {
-
-//         return (
-//             <div>
-//                 图表
-//             </div>
-//         )
-//     }
-// }
-
+import React, { useEffect, useState } from 'react';
+import services from '@/common/services/home';
 const Echarts = ()  => {
-    const foo = () => {
-        console.log(this)
+    const [list, setlist] = useState([]);
+    const foo = async () => {
+        let data = await services.getlist({});
+        let list1 = data.data.list
+        for(let i = 0; i<list1.length; i++){
+            const res = await services.getcount({id: i});
+            list1[i].count = res.data.data
+        }
+        setlist([...list1])
+
+    }
+    const foo1 = (inc) => {
+        // const res = await services.getcount({...inc});
+        // inc.count = res.data.data
+        return <div key={inc.id}>
+            {inc.id}---{inc.count}
+        </div>
     }
     useEffect(() => {
         foo()
     }, [])
+
     return (
         <div>
             图表练习
+            {
+                list.map(foo1)
+            }
         </div>
     ) 
 }

@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-04-07 20:58:19
+ * @LastEditTime: 2021-08-26 21:27:33
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \webpack-react\src\index.js
+ */
 import React from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
@@ -18,7 +26,7 @@ const SOURCE_PATH = path.join(PROJECT_PATH, './src')
 // 判断环境选着性使用mock数据
 if (process.env.NODE_ENV == "development") {
     // console.log(process.env.NODE_ENV)
-    require('./mock');
+    // require('./mock');
 }
 // export const history = createBrowserHistory();
 
